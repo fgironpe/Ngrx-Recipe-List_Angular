@@ -121,5 +121,8 @@
         }
       }
     }},
-  "defaultProject": "Recipe-List-Angular"
+  "defaultProject": "Recipe-List-Angular",
+  "cli": {
+    "analytics": "1ddbc225-d024-4c29-8053-1c7a19d2bb7c"
+  }
 }
