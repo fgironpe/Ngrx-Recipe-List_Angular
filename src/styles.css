@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* MARGINS */
+.mr-05 {
+  margin-right: .5rem;
+}
+
+.mr-1 {
+  margin-right: 1rem;
+}
+
+.mb-05 {
+  margin-bottom: .5rem;
+}
+
+/* FORM */
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched{
+  border: 1px solid red;
+}
