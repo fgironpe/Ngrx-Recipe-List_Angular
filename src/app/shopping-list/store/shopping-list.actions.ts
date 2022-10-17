@@ -1,12 +1,25 @@
 import { Action } from "@ngrx/store";
 import { Ingredient } from "src/app/shared/ingredient.model";
 
-export const ADD_INGREDIENT = 'ADD_INGREDIENT';
+/* export const ADD_INGREDIENT = 'ADD_INGREDIENT';
 export const ADD_INGREDIENTS = 'ADD_INGREDIENTS';
 export const UPDATE_INGREDIENT = 'UPDATE_INGREDIENT';
 export const DELETE_INGREDIENT = 'DELETE_INGREDIENT';
 export const START_EDIT = 'START_EDIT';
-export const STOP_EDIT = 'STOP_EDIT';
+export const STOP_EDIT = 'STOP_EDIT'; */
+
+/* 
+En aplicaciones muy grande es posible que haya acciones duplicadas, y como las acciones llegan a toda la aplicación, se recomienda usar
+Prefixing, que consiste en agregar información extra a la acción para que sea únic:
+En NgRx se usan [] que contiene el nombre de la parte del store al que pertenece: [Shopping List] y después el nombre del reducer, que
+puede estar en notación Uppercase o en minúscula
+*/
+export const ADD_INGREDIENT = '[Shopping List] Add Ingredient';
+export const ADD_INGREDIENTS = '[Shopping List] Add Ingredients';
+export const UPDATE_INGREDIENT = '[Shopping List] Update Ingredient';
+export const DELETE_INGREDIENT = '[Shopping List] Delete Ingredient';
+export const START_EDIT = '[Shopping List] Start Edit';
+export const STOP_EDIT = '[Shopping List] Stop Edit';
 
 export class AddIngredient implements Action {
   readonly type = ADD_INGREDIENT;
