@@ -30,3 +30,17 @@ Los **Reducers** son funciones que obtiene el estado actual que está almacenado
     - Está completamente integrado en Angular: Viene con servicios inyectables, por lo que puedes acceder fácilmente al **Store** en cualquier parte de la aplicación simplemente inyectándolo.
     - Usa RxJs: Emplea **Observables**. Todo el estado se gestiona como un gran **Observable**.
     - Soporta Typescript.
+
+## Effects
+
+Un side effect es una parte de la aplicación que contiene lógica que es importante para la aplicación pero no tan importante para actualizar inmediatamente el estado de la aplicación.
+
+El resultado de estas acciones sí que tiene que ser actualizado en el estado, pero el proceso en sí no.
+
+Side effects por ejemplo puede ser una petición http, en la que guardaremos el resultado en el estado, pero el proceso de la petición no habría que guardarlo, a parte de que en los reducers no se puede usar código asíncrono.
+
+Otro side effect puede ser acceder o escribir datos en el `localStorage`.
+
+Para controlar estos side effects, NgRx tiene un paquete llamado Effects que tiene que ser instalado a parte.
+
+Este paquete nos da herramientas para poder trabajar con estos side effects entre las acciones que enviamos y recibimos para mantener los reducers limpios y tener un lugar para poder gestionarlos.
