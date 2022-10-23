@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AuthEffects } from './auth/store/auth.effects';
 import { SharedModule } from './shared/shared.module';
 import * as fromApp from './store/app.reducer';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { AuthEffects } from './auth/store/auth.effects';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,7 @@ import { AuthEffects } from './auth/store/auth.effects';
     AppRoutingModule,
     StoreModule.forRoot(fromApp.appReducer),
     EffectsModule.forRoot([AuthEffects]),
+    StoreDevtoolsModule.instrument({ logOnly: environment.production }),
     SharedModule,
     CoreModule
   ],
